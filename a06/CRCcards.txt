@@ -1,0 +1,50 @@
+1. SellMode:
+    * Responsibilities :
+        - Shows products available with quantities and price.
+        - Accepts input for products.
+        - Notifies customer when chosen product is sold out, returns to main screen
+        - Displays "*** VEND ***" and Shows amount of money due when processing transaction.
+        - Returns a products when money inserted is sufficient.
+        - Cancels and returns money during transaction if transaction is aborted.
+        - Gets in OutOfOrder mode when cash box is full or when out-of-stock.
+        - Exits back to standbyMode when process finished.
+    * Collaborations:
+        - CashBox
+        - ManagerPhone
+        - StandbyMode
+        - OutOfOrderMode
+        - Coins
+
+2.ManagerMode:
+    * Responsibilites:
+        - Gets notified when machine has problems.
+        - Open Window Door, Cash Box.
+        - Restocks, empty cash box.
+        - Inputs secret keys to evaluate to go to management mode.
+        - Exits back to standbyMode.
+    * Collaborations:
+        - StandByMode
+
+
+3.StandbyMode:
+    * Responsibilites:
+        - Displays options to access different modes: ManagerMode, SellMode
+        - Decline and returns any money inserted.
+    * Collaborations:
+        - SellMode
+        - ManagerMode
+
+
+4.OutOfOrderMode:
+    * Responsibilities:
+        - Displays text notifying Out Of Order.
+        - Decline and return any money inserted.
+        - Accept access atemps into manager mode.
+    * Collaborations:
+        - SellMode
+        - ManagerMode
+5.Coins:
+    * Responsibilities:
+        - Classifies different types of coins.
+    * Collaborations:
+        - SellMode

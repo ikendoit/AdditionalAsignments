@@ -1,0 +1,23 @@
+1.Purchase:
+    - Choose show products -> shows products available and quantitiy of each products along with price.
+    - Choose one product -> shows amount of money needed,displays "*** VEND ***"
+    - Input bill money -> returns exact bill money, displays "only accepts coins"
+    - input money -> shows how much more money needed, stores all coins in cash box.
+    - Input correct amount of money ->  machine starts vending, return products
+    - Click abort -> returns exact amount of money input by taking coins out of cash box.
+    - Choose an unavailable product -> shows "Product out of stock"
+    - Machine in "out of order" -> cannot choose product.
+    - Machine in "out of order" -> returns exact amount of coins inserted.
+    - Machine in "out of order" -> displays "Machine is out of order"
+    - Machine out of all stocks -> becomes "out of order", displays "Machine out of order"
+2.Management:
+    - Cash box is 500 coins->
+        + if is in transaction, finish transation then go "out of order"
+        + if not in transaction, go "out of order"
+    - Cash box is 500 coins-> sends message to managers to requires emptying.
+    - If manager menu is chosen -> prompts for secret key:
+        + Secret key is incorrect -> exits to main screen, displays "incorrect key"
+        + Secret key is correct -> enter management mode.
+    - In management mode:
+        + if choose open cash box -> opens the cash box for emptying.
+        + if choose restock -> opens window door for restocking.

@@ -1,0 +1,14 @@
+1.Purchase :
+    - As a buyer, i want to input money so that i get my desired product
+    - As a buyer, i want to see amount of money input, so that i know how much more to add.
+    - As a buyer, i want to be returned with my bill money if accidentally inserted, so that i don't waste my money.
+    - As a buyer ,i want to cancel my transaction and get my exact amount of money ,so that i don't have to buy anything after consideration.
+    - As a buyer,i want to see the products available with quantity and price ,so that i can choose what i want.
+    - As a buyer,i want to be notified if the machine is out of order, so that i don't waste my time.
+    - As a buyer, i want my money back if the machine is out of order, so that i don't waste my money.
+
+2.Management:
+    - As a manager, i want to withdraw all money/restock products  with a special key so that not everybody can get access to the money box.
+    - As a manager, i want to be notified if there is an out of stock product so that i can restock it properly.
+
+
