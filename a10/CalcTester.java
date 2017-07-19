@@ -1,5 +1,6 @@
 import java.io.*;
 import java.nio.file.*;
+import java.nio.CharBuffer;
 import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.stream.IntStream;
@@ -7,14 +8,14 @@ import java.util.stream.Stream;
 
 /**
  * CalcTester.java - Calculator of "postfix notation" - Assignment 10
- * Example : 3 5 7 10 + - * = -36
- * @Author Trung Kien Nguyen
- * @ID 	   100284963
- * @CoAuthor Professor Jeremy Hilliker
- * @Company	 Langara
- * @version  1.0
- * @date	 July, 17th - 2017
- * @CLass	 CPSC 1181 
+ * Example	3 5 7 10 + - * = -36
+ * @Author	Trung Kien Nguyen
+ * @ID 	  	100284963
+ * @CoAuthor	Professor Jeremy Hilliker
+ * @Company		Langara
+ * @version 	1.0
+ * @date 		July, 17th - 2017
+ * @Class		CPSC 1181 
  */
 
 public class CalcTester  {
@@ -121,7 +122,7 @@ public class CalcTester  {
 	}
 
 	/**
-	 * Test using Scanner for normal and Exceptions
+	 * Test using Scanner for normal cases and Exceptions
 	 */
 	public void testScanner(){
 		//Test Scanner wrong inputs
@@ -141,20 +142,19 @@ public class CalcTester  {
 		assert 5 == new Calc(scNormalSingle).call(); 
 
 		//testScanner Exception
-		// AutoCloseable scEx = new Scanner("test string") { 
-		// 	public void close() throws IOException { 
-		// 		throw new IOException("Cause's IOException");
-		// 	}
-		// };
-		
-		// try {
-		// 	new Calc(scEx).call();
-		// 	assert false;
-		// } catch (RuntimeException e){
-		// 	assert "Scanner Exception".equals(e.getMessage());
-		// 	assert e.getCause() instanceof IOException;
-		// 	assert "Cause's IOException".equals(e.getCause().getMessage());
-		// }
+		Scanner scEx = new Scanner(new Readable() {
+			public int read(CharBuffer cb) throws IOException {
+				throw new IOException("Cause's IOException") ; 
+			}
+		}); 
+		try {
+			new Calc(scEx).call();
+			assert false;
+		} catch (RuntimeException e){
+			assert "Scanner Exception".equals(e.getMessage());
+			//assert e.getCause() instanceof IOException;
+			assert "Cause's IOException".equals(e.getCause().getMessage());
+		}
 	
 	}
 

@@ -6,13 +6,13 @@ import javax.management.RuntimeErrorException;
 /**
  * Calc.java - Calculator of "postfix notation" - Assignment 10
  * Example : 3 5 7 10 + - * = -36
- * @Author Trung Kien Nguyen
- * @ID 	   100284963
- * @CoAuthor Professor Jeremy Hilliker
- * @Company	 Langara
- * @version  1.0
- * @date	 July, 17th - 2017
- * @CLass	 CPSC 1181 
+ * @Author	Trung Kien Nguyen
+ * @ID 	  	100284963
+ * @CoAuthor	Professor Jeremy Hilliker
+ * @Company		Langara
+ * @version 	1.0
+ * @date		July, 17th - 2017
+ * @Class		CPSC 1181 
  */
 public class Calc implements Callable<Integer> {
 
@@ -33,7 +33,7 @@ public class Calc implements Callable<Integer> {
 	 * @param aScanner Scanner of parameter
 	 */
 	public Calc(Scanner aScanner) {
-		sc = aScanner;
+		this.sc = aScanner;
 		stack = new ArrayDeque<Integer>(); 
 	}
 
@@ -44,8 +44,9 @@ public class Calc implements Callable<Integer> {
 	 */
 	public Integer call() {
 		// checkScanner IOException
+		boolean testSc = sc.hasNext();
 		if (sc.ioException() != null){
-			throw new RuntimeException("Scanner Exception");
+			throw new RuntimeException("Scanner Exception",sc.ioException());
 		}
 
 		// check exists contents		
